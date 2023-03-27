@@ -1,20 +1,22 @@
 package com.company.gamestore.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-public class Game {
+@JsonIgnoreProperties({"hibernateLazyIntializer", "handler"})
+@Table(name="game")
+public class Game implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="game_id")
     private Integer game_id;
     @NotNull
     private String title;
