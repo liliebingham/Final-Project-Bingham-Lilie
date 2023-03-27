@@ -35,8 +35,6 @@ public class ConsoleController {
         }
     }
 
-
-
     // GET route that gets all consoles
     @GetMapping("/consoles")
     public List<Console> getConsoles() {
