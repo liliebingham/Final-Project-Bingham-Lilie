@@ -60,12 +60,6 @@ public class GameController {
         return repo.findByStudio(studio);
     }
 
-    // GET route that returns all games by ESRB
-    @GetMapping("/games/{esrb}")
-    public List<Game> getGameByEsrb(@PathVariable String esrb) {
-
-        return repo.findByEsrb(esrb);
-    }
 
     // GET route that returns all games by Title
     @GetMapping("/games/{title}")
