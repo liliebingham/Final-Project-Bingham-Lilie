@@ -31,7 +31,7 @@ public class ConsoleRepositoryTest {
 
 
     @Test
-    public void addConsole() {
+    public void shouldAddConsole() {
         //Arrange...
         Console console = new Console();
         console.setModel("Nintendo Switch");
@@ -68,7 +68,7 @@ public class ConsoleRepositoryTest {
     }
 
     @Test
-    public void getAllConsoles() {
+    public void shouldgGetAllConsoles() {
         //Arrange...
 
         //Act...
