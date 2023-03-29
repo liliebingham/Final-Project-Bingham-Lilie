@@ -109,8 +109,11 @@ public class TShirtRepositoryTest {
 
         inputTShirt = tShirtRepo.save(inputTShirt);
 
+        tShirtRepo.deleteById(inputTShirt.getId());
+
         Optional<TShirt> tShirt1 = tShirtRepo.findById(inputTShirt.getId());
         assertFalse(tShirt1.isPresent());
+
     }
 
 
