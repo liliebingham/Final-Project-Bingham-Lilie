@@ -21,11 +21,11 @@ import static org.junit.Assert.*;
 public class ConsoleRepositoryTest {
 
     @Autowired
-    ConsoleRepository repo;
+    ConsoleRepository consoleRepo;
 
     @Before
     public void setUp() throws Exception {
-        repo.deleteAll();
+        consoleRepo.deleteAll();
     }
 
 
@@ -41,10 +41,10 @@ public class ConsoleRepositoryTest {
         console.setQuantity(2);
 
         //Act...
-        console = repo.save(console);
+        console = consoleRepo.save(console);
 
         //Assert...
-        Optional<Console> console1 = repo.findById(console.getConsole_id());
+        Optional<Console> console1 = consoleRepo.findById(console.getConsole_id());
 
         assertEquals(console1.get(), console);
     }
@@ -60,9 +60,9 @@ public class ConsoleRepositoryTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        repo.save(console);
+        consoleRepo.save(console);
 
-        Optional<Console> console1 = repo.findById(console.getConsole_id());
+        Optional<Console> console1 = consoleRepo.findById(console.getConsole_id());
         assertEquals(console1.get(), console);
     }
 
@@ -79,7 +79,7 @@ public class ConsoleRepositoryTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        repo.save(console);
+        consoleRepo.save(console);
 
         Console console2 = new Console();
         console2.setModel("Nintendo Switch Lite");
@@ -89,9 +89,9 @@ public class ConsoleRepositoryTest {
         console2.setPrice(new BigDecimal("200.00"));
         console2.setQuantity(6);
 
-        repo.save(console2);
+        consoleRepo.save(console2);
 
-        List<Console> consoleList = repo.findAll();
+        List<Console> consoleList = consoleRepo.findAll();
 
         //Assert...
         assertEquals(2, consoleList.size());
@@ -109,14 +109,14 @@ public class ConsoleRepositoryTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        repo.save(console);
+        consoleRepo.save(console);
 
         // changing memory
         console.setMemory_amount("100GB");
-        console = repo.save(console);
+        console = consoleRepo.save(console);
 
 
-        Optional<Console> fromRepo = repo.findById(console.getConsole_id());
+        Optional<Console> fromRepo = consoleRepo.findById(console.getConsole_id());
         assertEquals(console, fromRepo.get());
     }
 
@@ -132,11 +132,11 @@ public class ConsoleRepositoryTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        repo.save(console);
+        consoleRepo.save(console);
 
-        repo.deleteById(console.getConsole_id());
+        consoleRepo.deleteById(console.getConsole_id());
 
-        Optional<Console> book1 = repo.findById(console.getConsole_id());
+        Optional<Console> book1 = consoleRepo.findById(console.getConsole_id());
         assertFalse(book1.isPresent());
     }
 
@@ -152,7 +152,7 @@ public class ConsoleRepositoryTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        repo.save(console);
+        consoleRepo.save(console);
 
         Console console2 = new Console();
         console2.setModel("PS5");
@@ -162,11 +162,11 @@ public class ConsoleRepositoryTest {
         console2.setPrice(new BigDecimal("499.99"));
         console2.setQuantity(2);
 
-        repo.save(console2);
+        consoleRepo.save(console2);
 
 
 
-        List<Console> consoleList = repo.findByManufacturer("Nintendo");
+        List<Console> consoleList = consoleRepo.findByManufacturer("Nintendo");
 
         assertEquals(1, consoleList.size());
     }

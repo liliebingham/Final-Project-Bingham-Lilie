@@ -42,7 +42,7 @@ public class ConsoleController {
     }
 
     // PUT route that updates a console
-    @PutMapping("/authors")
+    @PutMapping("/consoles")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateConsole(@RequestBody Console console) {
         repo.save(console);
@@ -56,7 +56,7 @@ public class ConsoleController {
     }
 
     //A GET route that returns all consoles from a certain manufacturer
-    @GetMapping("/books/author/{authorId}")
+    @GetMapping("/consoles/manufacturer/{manufacturer}")
     @ResponseStatus(value = HttpStatus.OK)
     public List<Console> getConsoleByManufacturer(@PathVariable String manufacturer) {
 
