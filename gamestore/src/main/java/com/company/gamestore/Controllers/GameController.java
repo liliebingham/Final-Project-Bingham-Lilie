@@ -60,10 +60,9 @@ public class GameController {
         return repo.findByStudio(studio);
     }
 
-
     // GET route that returns all games by Title
     @GetMapping("/games/{title}")
-    public List<Game> getGameByTitle(@PathVariable String title) {
+    public Optional<Game> getGameByTitle(@PathVariable String title) {
 
         return repo.findByTitle(title);
     }
