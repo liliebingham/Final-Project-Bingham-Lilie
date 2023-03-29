@@ -133,7 +133,7 @@ public class TShirtControllerTest {
         String outputJson = mapper.writeValueAsString(tShirtList);
 
         // ACT
-        mockMvc.perform(get("/tShirt/red"))                // Perform the GET request
+        mockMvc.perform(get("/tShirt/color/red"))                // Perform the GET request
                 .andDo(print())                          // Print results to console
                 .andExpect(status().isOk());              // ASSERT (status code is 200)
     }
