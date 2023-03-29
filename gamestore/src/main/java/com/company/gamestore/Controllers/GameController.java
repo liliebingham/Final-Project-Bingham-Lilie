@@ -21,7 +21,7 @@ public class GameController {
         return repo.save(game);
     }
 
-    // GET route that creates a game
+    // GET route that get a game by id
     @GetMapping("/games/{id}")
     public Game getGameById(@PathVariable Integer id) {
 
@@ -54,14 +54,21 @@ public class GameController {
     }
 
     // GET route that returns all games by Studio
-    @GetMapping("/games/{studio}")
+    @GetMapping("/games/studios/{studio}")
     public List<Game> getGameByStudio(@PathVariable String studio) {
 
         return repo.findByStudio(studio);
     }
 
+    // GET route that returns all games by Esrb Rating
+    @GetMapping("/games/esrb/{esrb}")
+    public List<Game> getGameByEsrbRating(@PathVariable String esrb) {
+
+        return repo.findByEsrbRating(esrb);
+    }
+
     // GET route that returns all games by Title
-    @GetMapping("/games/{title}")
+    @GetMapping("/games/titles/{title}")
     public Optional<Game> getGameByTitle(@PathVariable String title) {
 
         return repo.findByTitle(title);
