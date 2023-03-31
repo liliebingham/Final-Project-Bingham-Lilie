@@ -26,14 +26,14 @@ public class TShirtRepositoryTest {
         tShirtRepo.deleteAll();
     }
 
-    // testing a POST route that creates a new t-shirt
+    // test creating a new t-shirt
     @Test
     public void shouldCreateNewTShirt() {
         TShirt inputTShirt = new TShirt();
         inputTShirt.setSize("S");
         inputTShirt.setColor("Red");
-        inputTShirt.setDescription("Hollywood");
-        inputTShirt.setPrice(new BigDecimal("11.99"));
+        inputTShirt.setDescription("The Office T-Shirt -features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
+        inputTShirt.setPrice(new BigDecimal("15.99"));
         inputTShirt.setQuantity(20);
         inputTShirt = tShirtRepo.save(inputTShirt);
 
@@ -41,13 +41,13 @@ public class TShirtRepositoryTest {
         assertEquals(tShirt1.get(), inputTShirt);
     }
 
-    // testing a GET route that returns a specific t-shirt by id
+    // test returning a specific t-shirt by id
     @Test
     public void shouldGetTShirtById() {
         TShirt inputTShirt = new TShirt();
         inputTShirt.setSize("S");
         inputTShirt.setColor("Red");
-        inputTShirt.setDescription("Hollywood");
+        inputTShirt.setDescription("The Office T-Shirt -features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
         inputTShirt.setPrice(new BigDecimal("11.99"));
         inputTShirt.setQuantity(20);
         inputTShirt = tShirtRepo.save(inputTShirt);
@@ -56,13 +56,13 @@ public class TShirtRepositoryTest {
         assertEquals(tShirt1.get(), inputTShirt);
     }
 
-    // testing a GET route that returns all t-shirts
+    // test returning all t-shirts
     @Test
     public void shouldGetAllTShirts() {
         TShirt tShirt1 = new TShirt();
         tShirt1.setSize("S");
         tShirt1.setColor("Red");
-        tShirt1.setDescription("Hollywood");
+        tShirt1.setDescription("A T-Shirt that features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
         tShirt1.setPrice(new BigDecimal("11.99"));
         tShirt1.setQuantity(20);
         tShirtRepo.save(tShirt1);
@@ -70,7 +70,7 @@ public class TShirtRepositoryTest {
         TShirt tShirt2 = new TShirt();
         tShirt2.setSize("L");
         tShirt2.setColor("Blue");
-        tShirt2.setDescription("Hollywood");
+        tShirt2.setDescription("A graphic t-shirt that features a graphic of Stranger Things with the show's logo and characters. It is made from soft, lightweight cotton.");
         tShirt2.setPrice(new BigDecimal("11.99"));
         tShirt2.setQuantity(20);
         tShirtRepo.save(tShirt2);
@@ -86,7 +86,7 @@ public class TShirtRepositoryTest {
         TShirt inputTShirt = new TShirt();
         inputTShirt.setSize("S");
         inputTShirt.setColor("Red");
-        inputTShirt.setDescription("Hollywood");
+        inputTShirt.setDescription("A graphic t-shirt that features a graphic of Stranger Things with the show's logo and characters. It is made from soft, lightweight cotton.");
         inputTShirt.setPrice(new BigDecimal("11.99"));
         inputTShirt.setQuantity(20);
         inputTShirt = tShirtRepo.save(inputTShirt);
@@ -97,13 +97,13 @@ public class TShirtRepositoryTest {
         assertEquals(tShirt1.get(), inputTShirt);
     }
 
-    // testing a DELETE route that deletes an existing t-shirt
+    // test deleting an existing t-shirt
     @Test
     public void shouldDeleteTShirt() {
         TShirt inputTShirt = new TShirt();
         inputTShirt.setSize("S");
         inputTShirt.setColor("Red");
-        inputTShirt.setDescription("Hollywood");
+        inputTShirt.setDescription("A graphic t-shirt that features a graphic of Stranger Things with the show's logo and characters. It is made from soft, lightweight cotton.");
         inputTShirt.setPrice(new BigDecimal("11.99"));
         inputTShirt.setQuantity(20);
 
@@ -117,7 +117,7 @@ public class TShirtRepositoryTest {
     }
 
 
-    // testing a GET route that returns all t-shirts by color
+    // test returning all t-shirts by color
     @Test
     public void shouldFindByColor() {
         TShirt tShirt1 = new TShirt();
@@ -156,21 +156,21 @@ public class TShirtRepositoryTest {
         assertEquals(tShirtList.size(), 2);
     }
 
-    // testing a GET route that returns all t-shirts by size
+    // test returning all t-shirts by size
     @Test
     public void shouldFindBySize() {
         TShirt tShirt1 = new TShirt();
         tShirt1.setSize("S");
         tShirt1.setColor("Blue");
-        tShirt1.setDescription("Hollywood");
+        tShirt1.setDescription("A graphic t-shirt that features a graphic of Stranger Things with the show's logo and characters. It is made from soft, lightweight cotton.");
         tShirt1.setPrice(new BigDecimal("11.99"));
         tShirt1.setQuantity(20);
         tShirtRepo.save(tShirt1);
 
         TShirt tShirt2 = new TShirt();
-        tShirt2.setSize("S");
+        tShirt2.setSize("M");
         tShirt2.setColor("Red");
-        tShirt2.setDescription("Hollywood");
+        tShirt2.setDescription("A T-Shirt that features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
         tShirt2.setPrice(new BigDecimal("11.99"));
         tShirt2.setQuantity(20);
         tShirtRepo.save(tShirt2);
@@ -178,20 +178,20 @@ public class TShirtRepositoryTest {
         TShirt tShirt3 = new TShirt();
         tShirt3.setSize("S");
         tShirt3.setColor("Yellow");
-        tShirt3.setDescription("Hollywood");
+        tShirt3.setDescription("A graphic t-shirt that features a graphic of Stranger Things with the show's logo and characters. It is made from soft, lightweight cotton.");
         tShirt3.setPrice(new BigDecimal("11.99"));
         tShirt3.setQuantity(20);
         tShirtRepo.save(tShirt3);
 
         TShirt tShirt4 = new TShirt();
-        tShirt4.setSize("S");
+        tShirt4.setSize("L");
         tShirt4.setColor("Red");
-        tShirt4.setDescription("Hollywood");
+        tShirt4.setDescription("A T-Shirt that features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
         tShirt4.setPrice(new BigDecimal("11.99"));
         tShirt4.setQuantity(20);
         tShirtRepo.save(tShirt4);
 
         List<TShirt> tShirtList = tShirtRepo.findBySize("S");
-        assertEquals(tShirtList.size(), 4);
+        assertEquals(tShirtList.size(), 2);
     }
 }
