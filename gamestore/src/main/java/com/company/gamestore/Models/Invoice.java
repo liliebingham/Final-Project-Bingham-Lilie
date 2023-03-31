@@ -39,22 +39,7 @@ public class Invoice {
     private int item_id;
 
     @NotNull
-    private BigDecimal unit_price;
-
-    @NotNull
     private int quantity;
-
-    @NotNull
-    private BigDecimal subtotal;
-
-    @NotNull
-    private BigDecimal tax;
-
-    @NotNull
-    private BigDecimal processing_fee;
-
-    @NotNull
-    private BigDecimal total;
 
     public int getInvoice_id() {
         return invoice_id;
@@ -120,13 +105,6 @@ public class Invoice {
         this.item_id = item_id;
     }
 
-    public BigDecimal getUnit_price() {
-        return unit_price;
-    }
-
-    public void setUnit_price(BigDecimal unit_price) {
-        this.unit_price = unit_price;
-    }
 
     public int getQuantity() {
         return quantity;
@@ -136,49 +114,18 @@ public class Invoice {
         this.quantity = quantity;
     }
 
-    public BigDecimal getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(BigDecimal subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public BigDecimal getTax() {
-        return tax;
-    }
-
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
-    }
-
-    public BigDecimal getProcessing_fee() {
-        return processing_fee;
-    }
-
-    public void setProcessing_fee(BigDecimal processing_fee) {
-        this.processing_fee = processing_fee;
-    }
-
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Invoice invoice = (Invoice) o;
-        return getInvoice_id() == invoice.getInvoice_id() && getItem_id() == invoice.getItem_id() && getQuantity() == invoice.getQuantity() && Objects.equals(getName(), invoice.getName()) && Objects.equals(getStreet(), invoice.getStreet()) && Objects.equals(getCity(), invoice.getCity()) && Objects.equals(getState(), invoice.getState()) && Objects.equals(getZipcode(), invoice.getZipcode()) && Objects.equals(getItem_type(), invoice.getItem_type()) && Objects.equals(getUnit_price(), invoice.getUnit_price()) && Objects.equals(getSubtotal(), invoice.getSubtotal()) && Objects.equals(getTax(), invoice.getTax()) && Objects.equals(getProcessing_fee(), invoice.getProcessing_fee()) && Objects.equals(getTotal(), invoice.getTotal());
+        return getInvoice_id() == invoice.getInvoice_id() && getItem_id() == invoice.getItem_id() && getQuantity() == invoice.getQuantity() && Objects.equals(getName(), invoice.getName()) && Objects.equals(getStreet(), invoice.getStreet()) && Objects.equals(getCity(), invoice.getCity()) && Objects.equals(getState(), invoice.getState()) && Objects.equals(getZipcode(), invoice.getZipcode()) && Objects.equals(getItem_type(), invoice.getItem_type());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getInvoice_id(), getName(), getStreet(), getCity(), getState(), getZipcode(), getItem_type(), getItem_id(), getUnit_price(), getQuantity(), getSubtotal(), getTax(), getProcessing_fee(), getTotal());
+        return Objects.hash(getInvoice_id(), getName(), getStreet(), getCity(), getState(), getZipcode(), getItem_type(), getItem_id(), getQuantity());
     }
 
     @Override
@@ -192,12 +139,7 @@ public class Invoice {
                 ", zipcode='" + zipcode + '\'' +
                 ", item_type='" + item_type + '\'' +
                 ", item_id=" + item_id +
-                ", unit_price=" + unit_price +
                 ", quantity=" + quantity +
-                ", subtotal=" + subtotal +
-                ", tax=" + tax +
-                ", processing_fee=" + processing_fee +
-                ", total=" + total +
                 '}';
     }
 }
