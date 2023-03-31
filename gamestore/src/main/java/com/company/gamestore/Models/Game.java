@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -19,15 +21,20 @@ public class Game implements Serializable {
     @Column(name="game_id")
     private int game_id;
     @NotNull
+    @Size(max = 50)
     private String title;
     @NotNull
     @Column(name="esrb_rating")
+    @Size(max = 50)
     private String esrbRating;
     @NotNull
+    @Size(max = 255)
     private String description;
     @NotNull
+    @Digits(integer = 5, fraction = 2)
     private BigDecimal price;
     @NotNull
+    @Size(max = 50)
     private String studio;
     private int quantity;
 

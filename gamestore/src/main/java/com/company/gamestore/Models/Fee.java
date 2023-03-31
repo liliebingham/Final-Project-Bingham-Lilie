@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -15,9 +17,11 @@ import java.util.Objects;
 public class Fee {
 
     @Id
+    @Size(max = 50)
     private String product_type;
 
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal fee;
 
     public String getProduct_type() {

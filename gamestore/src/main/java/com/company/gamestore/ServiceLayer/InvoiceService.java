@@ -1,6 +1,5 @@
 package com.company.gamestore.ServiceLayer;
 
-import com.company.gamestore.Models.Console;
 import com.company.gamestore.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
