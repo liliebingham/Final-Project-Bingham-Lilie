@@ -2,6 +2,7 @@ package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.Console;
 import com.company.gamestore.Repositories.ConsoleRepository;
+import com.company.gamestore.ServiceLayer.ConsoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,45 +15,40 @@ import java.util.Optional;
 public class ConsoleController {
 
     @Autowired
-    ConsoleRepository repo;
+    ConsoleService serviceLayer;
 
 
     // POST route that creates a console
     @PostMapping("/consoles")
     @ResponseStatus(HttpStatus.CREATED)
     public Console addConsole(@RequestBody Console console) {
-        return repo.save(console);
+        return serviceLayer.saveConsole(console);
     }
 
     // GET route that reads console by ID
     @GetMapping("/consoles/{id}")
     public Console getConsoleById(@PathVariable Integer id) {
-        Optional<Console> returnVal = repo.findById(id);
-        if (returnVal.isPresent()) {
-            return returnVal.get();
-        } else {
-            return null;
-        }
+        return serviceLayer.findConsole(id);
     }
 
     // GET route that gets all consoles
     @GetMapping("/consoles")
     public List<Console> getConsoles() {
-        return repo.findAll();
+        return serviceLayer.findAllConsoles();
     }
 
     // PUT route that updates a console
     @PutMapping("/consoles")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateConsole(@RequestBody Console console) {
-        repo.save(console);
+        serviceLayer.updateConsole(console);
     }
 
     // DELETE route that deletes a console
     @DeleteMapping("/consoles/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteConsole(@PathVariable int id) {
-        repo.deleteById(id);
+        serviceLayer.removeConsole(id);
     }
 
     //A GET route that returns all consoles from a certain manufacturer
@@ -60,6 +56,6 @@ public class ConsoleController {
     @ResponseStatus(value = HttpStatus.OK)
     public List<Console> getConsoleByManufacturer(@PathVariable String manufacturer) {
 
-        return repo.findByManufacturer(manufacturer);
+        return serviceLayer.findConsoleByManufacturer(manufacturer);
     }
 }

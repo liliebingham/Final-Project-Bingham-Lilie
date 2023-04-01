@@ -44,8 +44,5 @@ public class InvoiceViewModel {
     @NotNull
     private BigDecimal total;
 
-    public static InvoiceViewModel saveInvoice(InvoiceViewModel invoice) {
 
-
-    }
 }
