@@ -36,7 +36,6 @@ public class ConsoleControllerTest {
 
     @Before
     public void setUp() {
-       // consoleRepo.deleteAll();
     }
 
 

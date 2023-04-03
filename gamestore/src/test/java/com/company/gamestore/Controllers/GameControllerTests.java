@@ -2,6 +2,7 @@ package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.Game;
 import com.company.gamestore.Repositories.GameRepository;
+import com.company.gamestore.ServiceLayer.GameService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +37,7 @@ public class GameControllerTests {
 
     // Customer Repository for testing purposes
     @MockBean
-    private GameRepository repo;
+    private GameService serviceLayer;
 
     @Before
     public void setUp() {
@@ -57,7 +58,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(game);
@@ -86,7 +87,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(game);
@@ -114,7 +115,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         String id = Integer.toString(game.getGame_id());
 
@@ -135,7 +136,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         String id = Integer.toString(game.getGame_id());
 
@@ -156,7 +157,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         List<Game> myList = new ArrayList<Game>();
         myList.add(game);
@@ -178,7 +179,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         List<Game> myList = new ArrayList<Game>();
         myList.add(game);
@@ -200,7 +201,7 @@ public class GameControllerTests {
         game.setStudio("Microsoft");
         game.setQuantity(100);
 
-        repo.save(game);
+        serviceLayer.saveGame(game);
 
         mockMvc.perform(get("/games/titles/Minecraft"))
                 .andDo(print())

@@ -11,6 +11,7 @@ import java.util.Optional;
 @Component
 public class ConsoleService {
 
+    @Autowired
     private ConsoleRepository consoleRepo;
 
     @Autowired
