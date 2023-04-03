@@ -19,10 +19,8 @@ public class Fee {
 
     @Id
     @Column(name="product_type")
-    private String productType;
-
     @Size(max = 50)
-    private String product_type;
+    private String productType;
 
     @NotNull
     @Digits(integer = 8, fraction = 2)

@@ -3,7 +3,9 @@ package com.company.gamestore.Models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -30,16 +32,21 @@ public class Invoice {
     @NotNull
     private int item_id;
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal unit_price;
     @NotNull
     private int quantity;
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal subtotal;
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal tax;
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal processing_fee;
     @NotNull
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal total;
 
     public int getInvoice_id() {
