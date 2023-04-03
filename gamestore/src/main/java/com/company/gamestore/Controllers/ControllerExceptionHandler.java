@@ -18,7 +18,7 @@ import java.util.List;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY) //422 code
     public ResponseEntity<List<CustomErrorResponse>> gameStoreValidationError(MethodArgumentNotValidException e) {
 
         // BindingResult holds the validation errors
