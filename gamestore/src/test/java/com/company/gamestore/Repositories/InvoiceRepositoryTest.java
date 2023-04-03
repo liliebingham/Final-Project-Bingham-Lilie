@@ -39,9 +39,9 @@ public class InvoiceRepositoryTest {
         inputInvoice1.setUnit_price(new BigDecimal(19.99));
         inputInvoice1.setQuantity(1);
         inputInvoice1.setSubtotal(new BigDecimal(19.99));
-        inputInvoice1.setTax(new BigDecimal(0.06));
+        inputInvoice1.setTax(new BigDecimal(1.20));
         inputInvoice1.setProcessing_fee(new BigDecimal(1.49));
-        inputInvoice1.setTotal(new BigDecimal(22.67));
+        inputInvoice1.setTotal(new BigDecimal(22.68));
         invoiceRepo.save(inputInvoice1);
 
         Optional<Invoice> foundInvoice = invoiceRepo.findById(inputInvoice1.getInvoice_id());
@@ -62,7 +62,7 @@ public class InvoiceRepositoryTest {
         inputInvoice1.setUnit_price(new BigDecimal(19.99));
         inputInvoice1.setQuantity(1);
         inputInvoice1.setSubtotal(new BigDecimal(19.99));
-        inputInvoice1.setTax(new BigDecimal(0.06));
+        inputInvoice1.setTax(new BigDecimal(1.20));
         inputInvoice1.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice1.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice1);
@@ -85,9 +85,10 @@ public class InvoiceRepositoryTest {
         inputInvoice1.setUnit_price(new BigDecimal(19.99));
         inputInvoice1.setQuantity(1);
         inputInvoice1.setSubtotal(new BigDecimal(19.99));
-        inputInvoice1.setTax(new BigDecimal(0.06));
+        inputInvoice1.setTax(new BigDecimal(1.20));
         inputInvoice1.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice1.setTotal(new BigDecimal(22.67));
+        invoiceRepo.save(inputInvoice1);
 
         Invoice inputInvoice2 = new Invoice();
         inputInvoice2.setName("James Williams");
@@ -100,7 +101,7 @@ public class InvoiceRepositoryTest {
         inputInvoice2.setUnit_price(new BigDecimal(19.99));
         inputInvoice2.setQuantity(1);
         inputInvoice2.setSubtotal(new BigDecimal(19.99));
-        inputInvoice2.setTax(new BigDecimal(0.06));
+        inputInvoice2.setTax(new BigDecimal(1.20));
         inputInvoice2.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice2.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice2);
@@ -124,7 +125,7 @@ public class InvoiceRepositoryTest {
         inputInvoice1.setUnit_price(new BigDecimal(19.99));
         inputInvoice1.setQuantity(1);
         inputInvoice1.setSubtotal(new BigDecimal(19.99));
-        inputInvoice1.setTax(new BigDecimal(0.06));
+        inputInvoice1.setTax(new BigDecimal(1.20));
         inputInvoice1.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice1.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice1);
@@ -140,7 +141,7 @@ public class InvoiceRepositoryTest {
         inputInvoice2.setUnit_price(new BigDecimal(19.99));
         inputInvoice2.setQuantity(1);
         inputInvoice2.setSubtotal(new BigDecimal(19.99));
-        inputInvoice2.setTax(new BigDecimal(0.06));
+        inputInvoice2.setTax(new BigDecimal(1.20));
         inputInvoice2.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice2.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice2);
@@ -156,7 +157,7 @@ public class InvoiceRepositoryTest {
         inputInvoice3.setUnit_price(new BigDecimal(19.99));
         inputInvoice3.setQuantity(1);
         inputInvoice3.setSubtotal(new BigDecimal(19.99));
-        inputInvoice3.setTax(new BigDecimal(0.06));
+        inputInvoice3.setTax(new BigDecimal(1.20));
         inputInvoice3.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice3.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice3);
@@ -172,7 +173,7 @@ public class InvoiceRepositoryTest {
         inputInvoice4.setUnit_price(new BigDecimal(19.99));
         inputInvoice4.setQuantity(1);
         inputInvoice4.setSubtotal(new BigDecimal(19.99));
-        inputInvoice4.setTax(new BigDecimal(0.06));
+        inputInvoice4.setTax(new BigDecimal(1.20));
         inputInvoice4.setProcessing_fee(new BigDecimal(1.49));
         inputInvoice4.setTotal(new BigDecimal(22.67));
         invoiceRepo.save(inputInvoice4);

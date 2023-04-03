@@ -30,7 +30,17 @@ public class Invoice {
     @NotNull
     private int item_id;
     @NotNull
+    private BigDecimal unit_price;
+    @NotNull
     private int quantity;
+    @NotNull
+    private BigDecimal subtotal;
+    @NotNull
+    private BigDecimal tax;
+    @NotNull
+    private BigDecimal processing_fee;
+    @NotNull
+    private BigDecimal total;
 
     public int getInvoice_id() {
         return invoice_id;
@@ -88,7 +98,6 @@ public class Invoice {
         this.item_id = item_id;
     }
 
-
     public int getQuantity() {
         return quantity;
     }
@@ -96,6 +105,39 @@ public class Invoice {
         this.quantity = quantity;
     }
 
+    public BigDecimal getUnit_price() {
+        return unit_price;
+    }
+    public void setUnit_price(BigDecimal unitPrice){
+        this.unit_price = unitPrice;
+    }
+
+    public BigDecimal getSubtotal(){
+        return subtotal;
+    }
+    public void setSubtotal(BigDecimal subtotal){
+        this.subtotal = subtotal;
+    }
+
+    public BigDecimal getTax(){
+        return tax;
+    }
+    public void setTax(BigDecimal tax){
+        this.tax = tax;
+    }
+    public BigDecimal getProcessing_fee(){
+        return processing_fee;
+    }
+    public void setProcessing_fee(BigDecimal processing_fee){
+        this.processing_fee = processing_fee;
+    }
+
+    public BigDecimal getTotal(){
+        return total;
+    }
+    public void setTotal(BigDecimal total){
+        this.total = total;
+    }
 
     @Override
     public boolean equals(Object o) {
