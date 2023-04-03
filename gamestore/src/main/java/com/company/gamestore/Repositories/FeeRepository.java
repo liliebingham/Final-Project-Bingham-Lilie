@@ -11,3 +11,4 @@ public interface FeeRepository extends JpaRepository<Fee, Integer> {
     Optional<Fee> findByProductType(String productType);
 
 }
+

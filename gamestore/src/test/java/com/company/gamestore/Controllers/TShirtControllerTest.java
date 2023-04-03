@@ -2,6 +2,8 @@ package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.TShirt;
 import com.company.gamestore.Repositories.TShirtRepository;
+import com.company.gamestore.ServiceLayer.ConsoleService;
+import com.company.gamestore.ServiceLayer.TShirtService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,7 +31,7 @@ public class TShirtControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private TShirtRepository TShirtRepository;
+    private TShirtService serviceLayer;
 
     // ObjectMapper used to convert Java objects to JSON and vice versa
     private ObjectMapper mapper = new ObjectMapper();
@@ -47,6 +49,7 @@ public class TShirtControllerTest {
         inputTShirt.setDescription("Hollywood");
         inputTShirt.setPrice(new BigDecimal("11.99"));
         inputTShirt.setQuantity(20);
+
 
         // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(inputTShirt);

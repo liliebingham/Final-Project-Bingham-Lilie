@@ -10,3 +10,6 @@ import java.util.Optional;
 public interface TaxRepository extends JpaRepository<Tax, Integer> {
     Optional<Tax> findByState(String state);
 }
+
+
+

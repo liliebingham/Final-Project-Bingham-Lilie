@@ -2,6 +2,7 @@ package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.Console;
 import com.company.gamestore.Repositories.ConsoleRepository;
+import com.company.gamestore.ServiceLayer.ConsoleService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,11 +32,10 @@ public class ConsoleControllerTest {
     private ObjectMapper mapper = new ObjectMapper();
 
     @MockBean
-    private ConsoleRepository consoleRepo;
+    private ConsoleService serviceLayer;
 
     @Before
     public void setUp() {
-        consoleRepo.deleteAll();
     }
 
 
@@ -54,7 +54,7 @@ public class ConsoleControllerTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        consoleRepo.save(console);
+        serviceLayer.saveConsole(console);
 
         String inputJson = mapper.writeValueAsString(console);
 
@@ -81,7 +81,7 @@ public class ConsoleControllerTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        consoleRepo.save(console);
+        serviceLayer.saveConsole(console);
 
         console.setQuantity(5);
 
@@ -111,7 +111,7 @@ public class ConsoleControllerTest {
         console.setQuantity(2);
         console.setConsole_id(1);
 
-        consoleRepo.save(console);
+        serviceLayer.saveConsole(console);
 
         // ACT
         mockMvc.perform(get("/consoles/1"))                // Perform the GET request
@@ -131,7 +131,9 @@ public class ConsoleControllerTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        consoleRepo.save(console);
+        //consoleRepo.save(console);
+
+        serviceLayer.saveConsole(console);
 
         // ACT
         mockMvc.perform(get("/consoles"))                  // Perform the GET request
@@ -152,7 +154,7 @@ public class ConsoleControllerTest {
         console.setQuantity(2);
         console.setConsole_id(1);
 
-        consoleRepo.save(console);
+        serviceLayer.saveConsole(console);
 
 
         // This method returns nothing, so we're just checking for correct status code
@@ -175,7 +177,7 @@ public class ConsoleControllerTest {
         console.setPrice(new BigDecimal("299.99"));
         console.setQuantity(2);
 
-        consoleRepo.save(console);
+        serviceLayer.saveConsole(console);
 
         mockMvc.perform(get("/consoles/manufacturer/Nintendo"))
                 .andDo(print())
