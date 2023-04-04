@@ -58,12 +58,13 @@ public class InvoiceServiceTest {
         console.setConsole_id(1);
 
         Console console2 = new Console();
-        console.setModel("Nintendo Switch Lite");
-        console.setManufacturer("Nintendo");
-        console.setMemory_amount("25GB");
-        console.setProcessor("Nvidia Tegra X1");
-        console.setPrice(new BigDecimal("199.99"));
-        console.setQuantity(1);
+        console2.setModel("Nintendo Switch");
+        console2.setManufacturer("Nintendo");
+        console2.setMemory_amount("50GB");
+        console2.setProcessor("Nvidia Tegra X1");
+        console2.setPrice(new BigDecimal("299.99"));
+        console2.setQuantity(2);
+        console2.setQuantity(1);
 
         List aList = new ArrayList();
         aList.add(console);
@@ -84,11 +85,11 @@ public class InvoiceServiceTest {
         inputTShirt.setId(1);
 
         TShirt tShirt2 = new TShirt();
-        inputTShirt.setSize("L");
-        inputTShirt.setColor("Blue");
-        inputTShirt.setDescription("The Office T-Shirt -features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
-        inputTShirt.setPrice(new BigDecimal("15.99"));
-        inputTShirt.setQuantity(10);
+        tShirt2.setSize("S");
+        tShirt2.setColor("Red");
+        tShirt2.setDescription("The Office T-Shirt -features a graphic of The Office's logo and characters. It is made from soft, comfortable cotton");
+        tShirt2.setPrice(new BigDecimal("15.99"));
+        tShirt2.setQuantity(20);
 
         List aList = new ArrayList();
         aList.add(inputTShirt);
@@ -111,12 +112,12 @@ public class InvoiceServiceTest {
         game.setGame_id(1);
 
         Game game2 = new Game();
-        game2.setTitle("Stardew Valley");
+        game2.setTitle("Minecraft");
         game2.setEsrbRating("E");
-        game2.setDescription("A game where you mine and farm!");
-        game2.setPrice(new BigDecimal("14.99"));
-        game2.setStudio("ConcernedApe");
-        game2.setQuantity(50);
+        game2.setDescription("A game where you mine and craft!");
+        game2.setPrice(new BigDecimal("20.00"));
+        game2.setStudio("Microsoft");
+        game2.setQuantity(100);
 
         List aList = new ArrayList();
         aList.add(game);
@@ -131,7 +132,33 @@ public class InvoiceServiceTest {
     private void setUpInvoiceMock() {
 
         invoiceRepo = mock(InvoiceRepository.class);
-        //doReturn(game).when(gameRepo).save(game2);
+        Invoice invoice = new Invoice();
+        invoice.setName("John Doe");
+        invoice.setStreet("123 Ocean Avenue");
+        invoice.setCity("Los Angeles");
+        invoice.setState("CA");
+        invoice.setZipcode("08520");
+        invoice.setItem_type("Shirt");
+        invoice.setItem_id(2);
+        invoice.setQuantity(1);
+        invoice.setInvoice_id(1);
+
+        Invoice invoice2 = new Invoice();
+        invoice2.setName("John Doe");
+        invoice2.setStreet("123 Ocean Avenue");
+        invoice2.setCity("Los Angeles");
+        invoice2.setState("CA");
+        invoice2.setZipcode("08520");
+        invoice2.setItem_type("Shirt");
+        invoice2.setItem_id(2);
+        invoice2.setQuantity(1);
+
+        List aList = new ArrayList();
+        aList.add(invoice);
+
+        doReturn(invoice).when(invoiceRepo).save(invoice2);
+        doReturn(Optional.of(invoice)).when(invoiceRepo).findById(1);
+        doReturn(aList).when(invoiceRepo).findAll();
 
     }
 
@@ -141,7 +168,18 @@ public class InvoiceServiceTest {
         Fee fee = new Fee();
         fee.setFee(new BigDecimal("5.99"));
         fee.setProductType("TShirt");
-        doReturn(Optional.of(fee)).when(feeRepo).findByProductType("TShirt");
+
+
+        Fee fee2 = new Fee();
+        fee.setFee(new BigDecimal("5.99"));
+        fee.setProductType("TShirt");
+
+        List aList = new ArrayList();
+        aList.add(fee);
+
+        doReturn(fee).when(feeRepo).save(fee2);
+        doReturn(Optional.of(fee)).when(feeRepo).findByProductType(fee.getProductType());
+        doReturn(aList).when(feeRepo).findAll();
 
 
     }
@@ -152,7 +190,17 @@ public class InvoiceServiceTest {
         Tax tax = new Tax();
         tax.setRate(new BigDecimal("10.99"));
         tax.setState("CA");
-        doReturn(Optional.of(tax)).when(taxRepo).findByState("CA");
+
+        Tax tax2 = new Tax();
+        tax2.setRate(new BigDecimal("10.99"));
+        tax2.setState("CA");
+
+        List aList = new ArrayList();
+        aList.add(tax);
+
+        doReturn(tax).when(taxRepo).save(tax2);
+        doReturn(Optional.of(tax)).when(taxRepo).findByState(tax.getState());
+        doReturn(aList).when(feeRepo).findAll();
     }
 
     @Test

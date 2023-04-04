@@ -48,7 +48,7 @@ public class InvoiceService {
                 unitPrice = consoleRepo.getReferenceById(itemId).getPrice();
                 break;
             default:
-                //error //unprocessable entity
+                //error unprocessable entity
         }
 
         // calculate subtotal, tax, processing fee, total
