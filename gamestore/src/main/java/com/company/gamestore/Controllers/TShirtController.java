@@ -1,15 +1,11 @@
 package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.TShirt;
-import com.company.gamestore.Repositories.TShirtRepository;
-import com.company.gamestore.ServiceLayer.ConsoleService;
 import com.company.gamestore.ServiceLayer.TShirtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class TShirtController {

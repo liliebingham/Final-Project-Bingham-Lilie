@@ -23,12 +23,10 @@ public class TShirtService {
 
 
     public TShirt saveTShirt(TShirt tshirt) {
-
         return tshirtRepo.save(tshirt);
     }
 
     public TShirt findTShirt(int id) {
-
         Optional<TShirt> tshirt = tshirtRepo.findById(id);
         return tshirt.isPresent() ? tshirt.get() : null;
     }
@@ -40,7 +38,6 @@ public class TShirtService {
     public List<TShirt> findTShirtBySize(String size) {
         return tshirtRepo.findBySize(size);
     }
-
 
     public List<TShirt> findAllTShirts() {
 
