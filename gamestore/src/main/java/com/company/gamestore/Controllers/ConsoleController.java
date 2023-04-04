@@ -1,14 +1,11 @@
 package com.company.gamestore.Controllers;
 
 import com.company.gamestore.Models.Console;
-import com.company.gamestore.Repositories.ConsoleRepository;
 import com.company.gamestore.ServiceLayer.ConsoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
