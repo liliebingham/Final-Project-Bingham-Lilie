@@ -95,6 +95,7 @@ public class InvoiceService {
             }
         } else throw new IllegalArgumentException("Invalid state: " + invoiceViewModel.getState());
 
+
         // calculate subtotal, tax, processing fee, total
         BigDecimal subtotal = unitPrice.multiply(new BigDecimal(quantity));
         //make sure state is valid, in state list, if not throw an error (optional)
