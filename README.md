@@ -1,4 +1,4 @@
-# Game Store Inventory Manager 
+# Game Store Inventory Management Web Service   
 Authors: Katherin Jimenez, Evelyn Quintero Ochoa, Lilie Bingham   
 References: https://nullbeans.com/the-java-bean-validation-cheet-sheet/   
 
