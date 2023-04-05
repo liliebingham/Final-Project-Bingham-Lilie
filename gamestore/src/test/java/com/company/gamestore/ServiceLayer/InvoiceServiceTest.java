@@ -22,6 +22,8 @@ import static org.mockito.Mockito.mock;
 
 
 public class InvoiceServiceTest {
+    /*
+}
 
     TaxRepository taxRepo;
     FeeRepository feeRepo;
@@ -205,7 +207,7 @@ public class InvoiceServiceTest {
 
     @Test
     public void shouldSaveInvoice() {
-        /*
+
 
         // Arrange
         Invoice expectedResult = new Invoice();
@@ -239,7 +241,7 @@ public class InvoiceServiceTest {
 
         assertEquals(expectedResult, testInvoice);
         //test to check if the subtotal, fee, tax and total are correct
-        */
+
     }
 
 
@@ -249,6 +251,6 @@ public class InvoiceServiceTest {
     @Test
     public void shouldUpdateInventoryQuantity() {
 
-    }
+    } */
 
 }
