@@ -27,6 +27,7 @@ public class ConsoleController {
     public Console getConsoleById(@PathVariable Integer id) {
         return serviceLayer.findConsole(id);
     }
+    
 
     // GET route that gets all consoles
     @GetMapping("/consoles")
