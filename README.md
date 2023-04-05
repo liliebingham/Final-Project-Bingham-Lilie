@@ -1,6 +1,7 @@
 # Game Store Inventory Management Web Service   
 Authors: Katherin Jimenez, Evelyn Quintero Ochoa, Lilie Bingham   
 References: https://nullbeans.com/the-java-bean-validation-cheet-sheet/, https://stackoverflow.com/questions/26548505/org-hibernate-hibernateexception-access-to-dialectresolutioninfo-cannot-be-null, https://github.com/cbeust/testng/issues/1693   
+Presentation: https://drive.google.com/file/d/1XYLzWxzJ3qp5pjM6LpyW-UQAZkW5XdXp/view 
 
 
 User Stories: 
